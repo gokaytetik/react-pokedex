@@ -1,0 +1,45 @@
+.card {
+  max-width: 50rem;
+  max-height: 50rem;
+  margin: auto;
+  margin-top: 5rem;
+  border-radius: 4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  &__image {
+    margin: 2.5rem;
+    padding: 0 5rem;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: rgb(231, 228, 228);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}
