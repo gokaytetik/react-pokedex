@@ -16,6 +16,7 @@ const Content = () => {
 
   useEffect(() => {
     setLoading(true);
+
     axios.get(currentPageUrl).then((res) => {
       setLoading(false);
       setPokemon(res.data.results);
@@ -38,7 +39,7 @@ const Content = () => {
     <React.Fragment>
       <div className="card-container">
         {pokemon.map((item) => (
-          <PokemonCard key={item.name} name={item.name} url={item.url} />
+          <PokemonCard key={item.name} names={item.name} url={item.url} />
         ))}
       </div>
       <Button

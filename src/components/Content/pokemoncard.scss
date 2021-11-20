@@ -34,12 +34,75 @@
   &__footer {
     display: flex;
     justify-content: center;
-    margin-bottom: 2.5rem;
-    padding-bottom: 3rem;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
 
     h2 {
       font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-weight: bold;
     }
   }
+}
+
+.rock {
+  background-color: #b6a136;
+}
+.ghost {
+  background-color: #735797;
+}
+.electric {
+  background-color: #f7d02c;
+}
+.bug {
+  background-color: #a6b91a;
+}
+.poison {
+  background-color: #a33ea1;
+}
+.normal {
+  background-color: #a8a77a;
+}
+.fairy {
+  background-color: #d685ad;
+}
+.fire {
+  background-color: #ee8130;
+}
+.grass {
+  background-color: #7ac74c;
+}
+.water {
+  background-color: #6390f0;
+}
+
+.ground {
+  background-color: #e2bf65;
+}
+.fighting {
+  background-color: #c22e28;
+}
+
+.psychic {
+  background-color: #f95587;
+}
+
+.ice {
+  background-color: #96d9d6;
+}
+
+.dragon {
+  background-color: #6f35fc;
+}
+
+.dark {
+  background-color: #705746;
+}
+
+.steel {
+  background-color: #b7b7ce;
 }
