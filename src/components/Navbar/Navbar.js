@@ -10,6 +10,9 @@ const Navbar = () => {
           <img src={Logo} alt="Pokeball Logo" />
         </div>
         <div className="navbar__text">React Pokedex</div>
+        <div className="navbar__back">
+          <a href="/"> Back </a>
+        </div>
       </div>
     </React.Fragment>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react/cjs/react.development";
 import { capitilizer } from "../../utils/utils.function";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./pokemoncard.scss";
 
 const PokemonCard = (props) => {
@@ -21,20 +22,27 @@ const PokemonCard = (props) => {
 
   return (
     <React.Fragment>
-      <div className="card">
-        <div className={`card__title + ${type}`}>{`#${pokemonIndex}`}</div>
-        <div className="card__image">
-          <img
-            src={`https://img.pokemondb.net/artwork/large/${props.names}.jpg`}
-            alt="pokemon-img"
-          />
-        </div>
-        <div className="card__footer">
-          <h2>{capitilizer(props.names)}</h2>
-          <p style={{ backgroundColor: "transparent" }} className={`${type}`}>
-            {`Type:  ${type}`}
-          </p>
-        </div>
+      <div className="card-container">
+        <Link style={{ textDecoration: "none" }} to={`/pokemon/${props.names}`}>
+          <div className="card">
+            <div className={`card__title + ${type}`}>{`#${pokemonIndex}`}</div>
+            <div className="card__image">
+              <img
+                src={`https://img.pokemondb.net/artwork/large/${props.names}.jpg`}
+                alt="pokemon-img"
+              />
+            </div>
+            <div className="card__footer">
+              <h2>{capitilizer(props.names)}</h2>
+              <p
+                style={{ backgroundColor: "transparent" }}
+                className={`${type}`}
+              >
+                {`Type:  ${type}`}
+              </p>
+            </div>
+          </div>
+        </Link>
       </div>
     </React.Fragment>
   );
