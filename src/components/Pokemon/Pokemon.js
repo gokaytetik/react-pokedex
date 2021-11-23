@@ -15,7 +15,6 @@ const Pokemon = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then((res) => {
-        console.log(res.data);
         setPokemonData(res.data);
       });
   }, [pokemonName]);
@@ -24,19 +23,19 @@ const Pokemon = () => {
     if (pokemonData) {
       const url = pokemonData.species.url;
       axios.get(url).then((res) => {
-        console.log(res);
         setPokemonSpecies(res.data);
       });
     }
   }, [pokemonData]);
-
   return (
     <React.Fragment>
       <div className="pokemon-page">
         <div className="pokemon-page__info">
           <img
             className="pokemon-page__img"
-            src={`https://img.pokemondb.net/artwork/large/${pokemonName}.jpg`}
+            src={
+              pokemonData && pokemonData.sprites.other.dream_world.front_default
+            }
             alt="pokemon-img"
           />
           <div className="pokemon-page__name">{capitilizer(pokemonName)}</div>
@@ -48,7 +47,7 @@ const Pokemon = () => {
           </div>
         </div>
         <div className="pokemon-page__features">
-          <div>
+          <div className="pokemon-page__left">
             <h2>Stats</h2>
             {pokemonData &&
               pokemonData.stats.map((item) => {
@@ -82,9 +81,9 @@ const Pokemon = () => {
             {pokemonSpecies && (
               <div>
                 <h2>Species</h2>
-                <h2>Happiness</h2>
+                <p>Happiness</p>
                 <ProgressBar done={pokemonSpecies.base_happiness} />
-                <h2>Capture Rate</h2>
+                <p>Capture Rate</p>
                 <ProgressBar done={pokemonSpecies.capture_rate} />
                 <p>{`Color:  ${capitilizer(pokemonSpecies.color.name)}`}</p>
                 <p>{`Habitat:  ${capitilizer(pokemonSpecies.habitat.name)}`}</p>
